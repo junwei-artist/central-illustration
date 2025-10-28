@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Data Visualization</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-purple-50 min-h-screen p-8">
+    <div class="max-w-6xl mx-auto">
+        <h1 class="text-4xl font-bold text-gray-900 mb-8 text-center">Interactive Data Visualization Demo</h1>
+        
+        <div class="bg-white rounded-xl shadow-2xl p-8 mb-8">
+            <h2 class="text-2xl font-semibold mb-6">Revenue Chart</h2>
+            <svg viewBox="0 0 800 400" class="w-full">
+                <defs>
+                    <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.8" />
+                        <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0.1" />
+                    </linearGradient>
+                </defs>
+                
+                <!-- Grid lines -->
+                <g stroke="#e5e7eb" stroke-width="1">
+                    <line x1="50" y1="50" x2="50" y2="350"/>
+                    <line x1="50" y1="350" x2="750" y2="350"/>
+                    <line x1="150" y1="50" x2="150" y2="350" stroke-dasharray="2,2"/>
+                    <line x1="250" y1="50" x2="250" y2="350" stroke-dasharray="2,2"/>
+                    <line x1="350" y1="50" x2="350" y2="350" stroke-dasharray="2,2"/>
+                    <line x1="450" y1="50" x2="450" y2="350" stroke-dasharray="2,2"/>
+                    <line x1="550" y1="50" x2="550" y2="350" stroke-dasharray="2,2"/>
+                    <line x1="650" y1="50" x2="650" y2="350" stroke-dasharray="2,2"/>
+                </g>
+                
+                <!-- Data line and fill -->
+                <path d="M 50 250 Q 150 200 250 180 T 450 120 T 650 80" 
+                      fill="none" 
+                      stroke="#3b82f6" 
+                      stroke-width="3"/>
+                
+                <path d="M 50 250 Q 150 200 250 180 T 450 120 T 650 80 L 650 350 L 50 350 Z" 
+                      fill="url(#gradient)"/>
+                
+                <!-- Data points -->
+                <circle cx="150" cy="200" r="5" fill="#3b82f6" class="float-animation" style="animation-delay: 0s"/>
+                <circle cx="250" cy="180" r="5" fill="#3b82f6" class="float-animation" style="animation-delay: 0.5s"/>
+                <circle cx="350" cy="150" r="5" fill="#3b82f6" class="float-animation" style="animation-delay: 1s"/>
+                <circle cx="450" cy="120" r="5" fill="#3b82f6" class="float-animation" style="animation-delay: 1.5s"/>
+                <circle cx="550" cy="100" r="5" fill="#3b82f6" class="float-animation" style="animation-delay: 2s"/>
+                <circle cx="650" cy="80" r="5" fill="#3b82f6" class="float-animation" style="animation-delay: 2.5s"/>
+                
+                <!-- Labels -->
+                <text x="150" y="370" text-anchor="middle" class="text-sm fill-gray-600">Jan</text>
+                <text x="250" y="370" text-anchor="middle" class="text-sm fill-gray-600">Feb</text>
+                <text x="350" y="370" text-anchor="middle" class="text-sm fill-gray-600">Mar</text>
+                <text x="450" y="370" text-anchor="middle" class="text-sm fill-gray-600">Apr</text>
+                <text x="550" y="370" text-anchor="middle" class="text-sm fill-gray-600">May</text>
+                <text x="650" y="370" text-anchor="middle" class="text-sm fill-gray-600">Jun</text>
+            </svg>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-2xl p-8">
+            <h2 class="text-2xl font-semibold mb-6">Interactive Controls</h2>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Data Smoothness</label>
+                    <input type="range" min="0" max="10" value="5" class="w-full">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Chart Type</label>
+                    <div class="flex gap-4">
+                        <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Line</button>
+                        <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300">Bar</button>
+                        <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300">Area</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

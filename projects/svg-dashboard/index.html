@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen p-8">
+    <div class="max-w-6xl mx-auto">
+        <h1 class="text-4xl font-bold text-gray-900 mb-12 text-center">SVG Dashboard</h1>
+        
+        <div class="grid md:grid-cols-3 gap-6">
+            <!-- Stat Card 1 -->
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <p class="text-gray-600 text-sm">Total Users</p>
+                        <h3 class="text-3xl font-bold text-gray-900 mt-2">12,543</h3>
+                    </div>
+                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                        <circle cx="32" cy="32" r="28" stroke="#3b82f6" stroke-width="4" fill="#dbeafe"/>
+                        <path d="M32 16 L32 32 L44 38" stroke="#3b82f6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="flex items-center text-green-600 text-sm">
+                    <span class="font-semibold">+12%</span>
+                    <span class="ml-2">from last month</span>
+                </div>
+            </div>
+            
+            <!-- Stat Card 2 -->
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <p class="text-gray-600 text-sm">Revenue</p>
+                        <h3 class="text-3xl font-bold text-gray-900 mt-2">$45,231</h3>
+                    </div>
+                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                        <rect x="12" y="40" width="10" height="12" rx="2" fill="#10b981"/>
+                        <rect x="27" y="32" width="10" height="20" rx="2" fill="#10b981"/>
+                        <rect x="42" y="24" width="10" height="28" rx="2" fill="#10b981"/>
+                    </svg>
+                </div>
+                <div class="flex items-center text-green-600 text-sm">
+                    <span class="font-semibold">+23%</span>
+                    <span class="ml-2">from last month</span>
+                </div>
+            </div>
+            
+            <!-- Stat Card 3 -->
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <p class="text-gray-600 text-sm">Active Sessions</p>
+                        <h3 class="text-3xl font-bold text-gray-900 mt-2">8,921</h3>
+                    </div>
+                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                        <path d="M32 12 L20 28 L32 32 L44 28 Z" fill="#8b5cf6"/>
+                        <path d="M32 32 L20 48 L32 52 L44 48 Z" fill="#8b5cf6"/>
+                    </svg>
+                </div>
+                <div class="flex items-center text-green-600 text-sm">
+                    <span class="font-semibold">+8%</span>
+                    <span class="ml-2">from last month</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
