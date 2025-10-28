@@ -77,9 +77,8 @@ class DemoProcessManager:
             env = os.environ.copy()
             env['PORT'] = str(port)
             
-            # Start with host 0.0.0.0 to allow network access
             process = subprocess.Popen(
-                ['npm', 'run', 'dev', '--', '-H', '0.0.0.0', '-p', str(port)],
+                ['npm', 'run', 'dev', '--', '-p', str(port)],
                 cwd=str(demo_dir),
                 env=env,
                 stdout=subprocess.PIPE,

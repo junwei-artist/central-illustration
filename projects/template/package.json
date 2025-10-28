@@ -1,11 +1,11 @@
 {
-  "name": "template-demo",
+  "name": "total-quality-management-demo",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p $PORT",
+    "dev": "next dev -p 3001",
     "build": "next build",
-    "start": "next start -p $PORT",
+    "start": "next start -p 3001",
     "lint": "next lint"
   },
   "dependencies": {

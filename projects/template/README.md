@@ -1,6 +1,6 @@
-# Template Demonstration
+# Total Quality Management Demonstration
 
-A Next.js template project based on the Total Quality Management demo. Use this as a starting point for creating new demonstration projects.
+A comprehensive Next.js demonstration showcasing Total Quality Management principles, tools, and benefits.
 
 ## 🚀 Features
 
@@ -23,7 +23,7 @@ A Next.js template project based on the Total Quality Management demo. Use this 
 ## 📁 Project Structure
 
 ```
-template/
+total-quality-management/
 ├── app/
 │   ├── page.tsx          # Homepage with hero slider and carousel
 │   ├── layout.tsx        # Root layout
@@ -41,7 +41,7 @@ template/
 
 1. **Navigate to the demo folder:**
    ```bash
-   cd projects/template
+   cd projects/total-quality-management
    ```
 
 2. **Install dependencies:**
@@ -99,9 +99,9 @@ To add this demo to your Central Illustration platform:
 
 1. **Admin Dashboard** - Go to http://localhost:3000/admin
 2. **Create New Demo:**
-   - Title: "Demo Template"
-   - Description: "A template for creating new demonstration projects"
-   - Folder Name: `template`
+   - Title: "Total Quality Management"
+   - Description: "Comprehensive TQM demonstration with modern UI"
+   - Folder Name: `total-quality-management`
    - URL: (optional)
    - Visibility: ✅ Check to make public
 
