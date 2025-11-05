@@ -1,0 +1,47 @@
+{
+  "items": [
+    {
+      "id": "text_1761720612530",
+      "type": "text",
+      "content": "Edit me",
+      "x": 80.0,
+      "y": 80.0,
+      "width": 200.0,
+      "height": 80.0,
+      "style": {
+        "fontSize": 24,
+        "color": "#ffffff"
+      }
+    },
+    {
+      "id": "svg_1761720861669",
+      "type": "svg",
+      "content": "<svg viewBox=\"0 0 200 100\"><circle cx=\"50\" cy=\"50\" r=\"30\" fill=\"orange\"/></svg>",
+      "x": 160.0,
+      "y": 160.0,
+      "width": 200.0,
+      "height": 100.0,
+      "style": null
+    },
+    {
+      "id": "svg_1761720862646",
+      "type": "svg",
+      "content": "<svg viewBox=\"0 0 200 100\"><circle cx=\"50\" cy=\"50\" r=\"30\" fill=\"orange\"/></svg>",
+      "x": 160.0,
+      "y": 160.0,
+      "width": 200.0,
+      "height": 100.0,
+      "style": null
+    },
+    {
+      "id": "img_1761720867104",
+      "type": "image",
+      "content": "/uploads/242353d7eb714df19c8d42370c0db8c0.png",
+      "x": 120.0,
+      "y": 120.0,
+      "width": 240.0,
+      "height": 160.0,
+      "style": null
+    }
+  ]
+}

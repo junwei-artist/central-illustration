@@ -1,0 +1,47 @@
+{
+  "name": "orange-template",
+  "description": "Modern template with hero sections, dynamic content from markdown, orange gradient theme, and comprehensive page management",
+  "version": "2.0.0",
+  "author": "Central Illustration",
+  "icon": "🎨",
+  "category": "landing-page",
+  "features": [
+    "Hero slider with multiple customizable pages",
+    "Dynamic content from markdown files in public/content/",
+    "Orange gradient theme",
+    "Framer Motion animations",
+    "Glassmorphism detail viewer",
+    "Responsive design",
+    "Comprehensive editor for all page content",
+    "Flexible page management"
+  ],
+  "pages": [
+    {
+      "index": 0,
+      "name": "Hero Page 1",
+      "type": "hero-centered",
+      "description": "Full-width hero with centered content and background illustration",
+      "template": "page-1"
+    },
+    {
+      "index": 1,
+      "name": "Hero Page 2",
+      "type": "split-layout",
+      "description": "Split layout with text on left (2/3) and SVG on right (1/3)",
+      "template": "page-2"
+    }
+  ],
+  "content_structure": {
+    "page-1": {
+      "title.md": "Title and subtitle for page 1",
+      "points.md": "Description and main content for page 1",
+      "detail.md": "Detailed content shown in modal viewer"
+    },
+    "page-2": {
+      "title.md": "Title and subtitle for page 2",
+      "points.md": "Bullet points and descriptions for page 2",
+      "detail.md": "Detailed content shown in modal viewer"
+    }
+  }
+}
+

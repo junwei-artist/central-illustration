@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Total Quality Management - Excellence Through Continuous Improvement</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        
+        .hero-slide { display: none; }
+        .hero-slide.active { display: block; }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <span class="ml-2 text-xl font-bold text-gray-900">TQM</span>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-8">
+                    <a href="index.html" class="text-blue-600 font-semibold">Home</a>
+                    <a href="principles.html" class="text-gray-700 hover:text-blue-600 transition">Principles</a>
+                    <a href="tools.html" class="text-gray-700 hover:text-blue-600 transition">Tools</a>
+                    <a href="benefits.html" class="text-gray-700 hover:text-blue-600 transition">Benefits</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Slider Section -->
+    <section class="relative bg-gradient-to-br from-blue-600 to-purple-700 overflow-hidden h-screen">
+        <!-- Slides -->
+        <div class="hero-slide active absolute inset-0 flex items-center">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="fade-in">
+                        <h1 class="text-5xl md:text-6xl font-extrabold mb-6">
+                            Total Quality<br/>Management
+                        </h1>
+                        <p class="text-xl md:text-2xl mb-8 text-blue-100">
+                            Achieving excellence through continuous improvement and customer focus
+                        </p>
+                        <a href="#overview" class="inline-block px-8 py-4 bg-white text-blue-600 font-bold rounded-lg hover:bg-blue-50 transition shadow-xl">
+                            Explore TQM
+                        </a>
+                    </div>
+                    <div class="hidden md:block">
+                        <svg viewBox="0 0 500 400" class="w-full animate-float">
+                            <circle cx="250" cy="200" r="80" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="3">
+                                <animate attributeName="r" values="80;100;80" dur="3s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="250" cy="200" r="50" fill="white" opacity="0.8">
+                                <animate attributeName="opacity" values="0.8;0.5;0.8" dur="2s" repeatCount="indefinite"/>
+                            </circle>
+                            <text x="250" y="210" text-anchor="middle" fill="#3B82F6" font-size="24" font-weight="bold">Quality</text>
+                            <circle cx="150" cy="150" r="30" fill="rgba(255,255,255,0.6)" opacity="0.7">
+                                <animateTransform attributeName="transform" type="rotate" values="0 150 150;360 150 150" dur="10s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="350" cy="250" r="30" fill="rgba(255,255,255,0.6)" opacity="0.7">
+                                <animateTransform attributeName="transform" type="rotate" values="360 350 250;0 350 250" dur="10s" repeatCount="indefinite"/>
+                            </circle>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-slide absolute inset-0 flex items-center">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h1 class="text-5xl md:text-6xl font-extrabold mb-6">
+                            Continuous<br/>Improvement
+                        </h1>
+                        <p class="text-xl md:text-2xl mb-8 text-blue-100">
+                            PDCA cycle: Plan, Do, Check, Act for systematic improvement
+                        </p>
+                        <a href="principles.html" class="inline-block px-8 py-4 bg-white text-blue-600 font-bold rounded-lg hover:bg-blue-50 transition shadow-xl">
+                            Learn More
+                        </a>
+                    </div>
+                    <div class="hidden md:block">
+                        <svg viewBox="0 0 500 400" class="w-full">
+                            <circle cx="100" cy="100" r="8" fill="#60A5FA"/>
+                            <path d="M 100 100 L 200 150 L 300 100 L 400 150" stroke="white" stroke-width="4" fill="none" stroke-linecap="round"/>
+                            <circle cx="200" cy="150" r="8" fill="#60A5FA">
+                                <animate attributeName="cy" values="150;140;150" dur="2s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="300" cy="100" r="8" fill="#60A5FA"/>
+                            <circle cx="400" cy="150" r="8" fill="#60A5FA">
+                                <animate attributeName="cy" values="150;140;150" dur="3s" repeatCount="indefinite"/>
+                            </circle>
+                            <text x="250" y="80" text-anchor="middle" fill="white" font-size="18">Continuous Improvement Cycle</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider Controls -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">
+            <button class="slider-dot w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-100 transition" data-slide="0"></button>
+            <button class="slider-dot w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-100 transition" data-slide="1"></button>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">What is Total Quality Management?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    A comprehensive approach to long-term success through customer satisfaction
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-8 shadow-lg">
+                    <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Customer Focus</h3>
+                    <p class="text-gray-600">Understanding and meeting customer needs is paramount to business success.</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-8 shadow-lg">
+                    <div class="w-16 h-16 bg-green-600 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Continuous Improvement</h3>
+                    <p class="text-gray-600">Regular assessment and improvement of processes and products.</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-8 shadow-lg">
+                    <div class="w-16 h-16 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Team Involvement</h3>
+                    <p class="text-gray-600">Every employee participates in quality improvement initiatives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Carousel Section -->
+    <section class="py-20 bg-gradient-to-br from-gray-100 to-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">TQM in Action</h2>
+                <p class="text-xl text-gray-600">Visual journey of quality management principles</p>
+            </div>
+            
+            <div class="carousel-container bg-white rounded-2xl shadow-2xl overflow-hidden" style="height: 500px;">
+                <div class="carousel-track flex transition-transform duration-500 ease-in-out">
+                    <!-- Carousel Item 1 -->
+                    <div class="carousel-item w-full flex-shrink-0 relative">
+                        <svg viewBox="0 0 800 500" class="w-full h-full">
+                            <rect width="800" height="500" fill="url(#grad1)"/>
+                            <defs>
+                                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <circle cx="400" cy="250" r="100" fill="white" opacity="0.3">
+                                <animate attributeName="r" values="100;130;100" dur="3s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="400" cy="250" r="50" fill="white"/>
+                            <text x="400" y="260" text-anchor="middle" fill="#3B82F6" font-size="20" font-weight="bold">Quality First</text>
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="bg-white/90 backdrop-blur-sm rounded-xl p-8 max-w-md">
+                                <h3 class="text-2xl font-bold text-gray-900 mb-3">Quality First Approach</h3>
+                                <p class="text-gray-600">Quality is not an accident, it is always the result of high intention, sincere effort, intelligent direction and skillful execution.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carousel Item 2 -->
+                    <div class="carousel-item w-full flex-shrink-0 relative">
+                        <svg viewBox="0 0 800 500" class="w-full h-full">
+                            <rect width="800" height="500" fill="#10B981"/>
+                            <g transform="translate(400,250)">
+                                <circle r="30" fill="white">
+                                    <animateTransform attributeName="transform" type="rotate" values="0;360" dur="4s" repeatCount="indefinite"/>
+                                </circle>
+                                <circle r="60" fill="none" stroke="white" stroke-width="3" opacity="0.5"/>
+                                <circle r="90" fill="none" stroke="white" stroke-width="3" opacity="0.3"/>
+                            </g>
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="bg-white/90 backdrop-blur-sm rounded-xl p-8 max-w-md">
+                                <h3 class="text-2xl font-bold text-gray-900 mb-3">Process Excellence</h3>
+                                <p class="text-gray-600">Improving processes systematically ensures consistent quality outcomes and customer satisfaction.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carousel Item 3 -->
+                    <div class="carousel-item w-full flex-shrink-0 relative">
+                        <svg viewBox="0 0 800 500" class="w-full h-full">
+                            <rect width="800" height="500" fill="#F59E0B"/>
+                            <polygon points="400,150 320,250 480,250" fill="white" opacity="0.9"/>
+                            <polygon points="320,250 400,350 480,250" fill="white" opacity="0.7">
+                                <animate attributeName="opacity" values="0.7;0.9;0.7" dur="2s" repeatCount="indefinite"/>
+                            </polygon>
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="bg-white/90 backdrop-blur-sm rounded-xl p-8 max-w-md">
+                                <h3 class="text-2xl font-bold text-gray-900 mb-3">Leadership Commitment</h3>
+                                <p class="text-gray-600">Strong leadership drives quality culture and empowers teams to achieve excellence.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carousel Controls -->
+                <button class="carousel-prev absolute left-4 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:bg-gray-100 transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                    </svg>
+                </button>
+                <button class="carousel-next absolute right-4 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:bg-gray-100 transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <span class="ml-2 text-xl font-bold text-white">TQM</span>
+                    </div>
+                    <p class="text-sm">Total Quality Management demonstration showcasing principles, tools, and benefits.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Navigation</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+                        <li><a href="principles.html" class="hover:text-white transition">Principles</a></li>
+                        <li><a href="tools.html" class="hover:text-white transition">Tools</a></li>
+                        <li><a href="benefits.html" class="hover:text-white transition">Benefits</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Learn More</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>Customer Focus</li>
+                        <li>Continuous Improvement</li>
+                        <li>Process Management</li>
+                        <li>Team Involvement</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contact</h4>
+                    <p class="text-sm">This is a demonstration project from Central Illustration platform.</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
+                <p>&copy; 2024 Total Quality Management Demo. Educational purposes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hero Slider
+        const slides = document.querySelectorAll('.hero-slide');
+        const dots = document.querySelectorAll('.slider-dot');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('bg-blue-600', 'opacity-100'));
+            slides[index].classList.add('active');
+            dots[index].classList.add('bg-blue-600', 'opacity-100');
+        }
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                currentSlide = parseInt(dot.dataset.slide);
+                showSlide(currentSlide);
+            });
+        });
+
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }, 5000);
+
+        // Carousel
+        const track = document.querySelector('.carousel-track');
+        const items = document.querySelectorAll('.carousel-item');
+        let currentIndex = 0;
+
+        document.querySelector('.carousel-next').addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % items.length;
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        });
+
+        document.querySelector('.carousel-prev').addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + items.length) % items.length;
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        });
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % items.length;
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }, 4000);
+    </script>
+</body>
+</html>
+

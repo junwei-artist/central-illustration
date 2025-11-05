@@ -2,6 +2,8 @@ import subprocess
 import os
 import json
 import atexit
+import socket
+import random
 from typing import Dict, Optional
 from pathlib import Path
 
@@ -39,17 +41,54 @@ class DemoProcessManager:
         except Exception as e:
             print(f"Error saving processes: {e}")
     
+    def _allocate_ephemeral_port(self, used_ports: list[int]) -> int:
+        """Allocate an available high-range port (49152–65535)."""
+        low, high = 49152, 65535
+        # Try random probes first for good distribution
+        for _ in range(100):
+            candidate = random.randint(low, high)
+            if candidate in used_ports:
+                continue
+            with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+                s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+                try:
+                    s.bind(("127.0.0.1", candidate))
+                    return candidate
+                except OSError:
+                    continue
+        # Fallback: sequential scan
+        for candidate in range(low, high + 1):
+            if candidate in used_ports:
+                continue
+            with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+                s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+                try:
+                    s.bind(("127.0.0.1", candidate))
+                    return candidate
+                except OSError:
+                    continue
+        raise RuntimeError("No available ephemeral ports found in 49152–65535 range")
+
     def get_port_for_demo(self, folder_name: str) -> int:
-        """Get or assign a port for a demo"""
+        """Get or assign a port for a demo using high-range dynamic ports.
+
+        Reuse an existing port only if the recorded process is still running; otherwise
+        allocate a fresh port to avoid conflicts.
+        """
+        # Clean up stale record if present
         if folder_name in self.processes:
-            return self.processes[folder_name]['port']
-        else:
-            # Find next available port
-            used_ports = [p['port'] for p in self.processes.values()]
-            port = self.base_port
-            while port in used_ports:
-                port += 1
-            return port
+            pid = self.processes[folder_name].get('pid')
+            if pid and self._is_process_running(pid):
+                return self.processes[folder_name]['port']
+            else:
+                # Remove stale entry before allocating a new port
+                try:
+                    del self.processes[folder_name]
+                except Exception:
+                    pass
+                self._save_processes()
+        used_ports = [p['port'] for p in self.processes.values()]
+        return self._allocate_ephemeral_port(used_ports)
     
     def start_demo(self, folder_name: str, project_path: str) -> Dict:
         """Start a demo project"""
@@ -76,6 +115,10 @@ class DemoProcessManager:
             # Change to demo directory and start
             env = os.environ.copy()
             env['PORT'] = str(port)
+            # Increase file watching limits to prevent conflicts between multiple Next.js servers
+            env['NODE_OPTIONS'] = '--max-old-space-size=4096'
+            # Prevent Next.js from watching parent directories unnecessarily
+            env['WATCHPACK_POLLING'] = 'true'
             
             process = subprocess.Popen(
                 ['npm', 'run', 'dev', '--', '-p', str(port)],

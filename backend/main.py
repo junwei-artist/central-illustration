@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from core.config import settings
-from api import auth, demos, comments, demo_manager
+from api import auth, demos, comments, demo_manager, proxy, exporter, extensions, content_editor
 
 app = FastAPI(
     title="Central Illustration API",
@@ -36,6 +36,11 @@ app.include_router(auth.router)
 app.include_router(demos.router)
 app.include_router(comments.router)
 app.include_router(demo_manager.router)
+app.include_router(exporter.router)
+app.include_router(extensions.router)
+app.include_router(content_editor.router)
+# Proxy router must be last due to catch-all pattern
+app.include_router(proxy.router)
 
 
 @app.get("/")

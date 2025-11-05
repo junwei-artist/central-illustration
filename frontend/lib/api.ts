@@ -161,6 +161,102 @@ export const apiService = {
     const response = await api.get(`/demo-manager/redirect/${demoId}`)
     return response.data
   },
+  
+  createFromTemplate: async (data: { title: string; description: string; folder_name: string; template_id: number; is_visible?: boolean }) => {
+    const response = await api.post('/demo-manager/create-from-template', data)
+    return response.data
+  },
+  
+  // Export
+  exportDemo: async (demoId: number, format: 'ppt_169' | 'ppt_43' | 'pdf_169' | 'pdf_43') => {
+    const response = await api.post(`/export/${demoId}?format=${format}`, {}, {
+      responseType: 'blob'
+    })
+    return response.data
+  },
+  
+  // Extensions
+  getExtensions: async () => {
+    const response = await api.get('/extensions/list')
+    return response.data
+  },
+  
+  getExtensionInfo: async (extensionName: string) => {
+    const response = await api.get(`/extensions/${extensionName}/info`)
+    return response.data
+  },
+  
+  createProjectFromExtension: async (extensionName: string, data: { title: string; description: string; folder_name: string }) => {
+    const response = await api.post(`/extensions/create-from-extension?extension_name=${extensionName}`, data)
+    return response.data
+  },
+  
+  getProjectExtension: async (demoId: number) => {
+    const response = await api.get(`/extensions/project-extension/${demoId}`)
+    return response.data as { extension_name: string | null }
+  },
+  
+  // Content Editor
+  getProjectPages: async (demoId: number) => {
+    const response = await api.get(`/content-editor/${demoId}/pages`)
+    return response.data
+  },
+  
+  getPageContent: async (demoId: number, pageIndex: number, contentType: 'title' | 'points' | 'detail') => {
+    const response = await api.get(`/content-editor/${demoId}/page/${pageIndex}/${contentType}`)
+    return response.data
+  },
+  
+  updatePageContent: async (demoId: number, pageIndex: number, contentType: 'title' | 'points' | 'detail', content: string) => {
+    const response = await api.put(`/content-editor/${demoId}/page/${pageIndex}/${contentType}`, {
+      page_index: pageIndex,
+      content_type: contentType,
+      content
+    })
+    return response.data
+  },
+  
+  addPage: async (demoId: number, basePageIndex: number) => {
+    const response = await api.post(`/content-editor/${demoId}/add-page`, {
+      base_page_index: basePageIndex,
+      page_data: {}
+    })
+    return response.data
+  },
+  deletePage: async (demoId: number, pageIndex: number) => {
+    const response = await api.delete(`/content-editor/${demoId}/page/${pageIndex}`)
+    return response.data
+  },
+  
+  publishChanges: async (demoId: number, pageIndex?: number) => {
+    const response = await api.post(`/content-editor/${demoId}/publish`, {
+      page_index: pageIndex
+    })
+    return response.data
+  },
+  
+  // Layout
+  getLayout: async (demoId: number, pageIndex: number) => {
+    const response = await api.get(`/content-editor/${demoId}/page/${pageIndex}/layout`)
+    return response.data as { items: Array<any> }
+  },
+  saveLayout: async (demoId: number, pageIndex: number, items: Array<any>) => {
+    const response = await api.put(`/content-editor/${demoId}/page/${pageIndex}/layout`, { items })
+    return response.data
+  },
+  uploadAsset: async (demoId: number, file: File) => {
+    const form = new FormData()
+    form.append('file', file)
+    const baseURL = getBaseURL()
+    const token = typeof window !== 'undefined' ? localStorage.getItem('access_token') : null
+    const res = await fetch(`${baseURL}/content-editor/${demoId}/upload`, {
+      method: 'POST',
+      headers: token ? { Authorization: `Bearer ${token}` } : undefined,
+      body: form,
+    })
+    if (!res.ok) throw new Error('Upload failed')
+    return res.json() as Promise<{ status: string; path: string }>
+  },
 }
 
 export default api
